@@ -47,7 +47,7 @@ public class EventProcessor {
     public static void printJoninEvents(List<Ereignis> ereignise) {
         ereignise.stream()
                 .filter(e -> e.getStufe() == Stufe.Jonin)
-                .sorted(Comparator.comparing(e -> e.datum))
+                .sorted(Comparator.comparing(e -> e.datum, Comparator.reverseOrder()))
                 .forEach(System.out::println);
     }
 
