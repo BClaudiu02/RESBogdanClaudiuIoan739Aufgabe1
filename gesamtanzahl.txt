@@ -1,0 +1,4 @@
+Kage%10
+Genin%8
+Chunin%8
+Jonin%4

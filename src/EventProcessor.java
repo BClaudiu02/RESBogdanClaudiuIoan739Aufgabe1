@@ -51,6 +51,22 @@ public class EventProcessor {
                 .forEach(System.out::println);
     }
 
+    public static void saveStufePunkte(List<Ereignis> events, String ausgabeDatei) throws IOException {
+        Map<Object, Long> stufeCount = events.stream()
+                .collect(Collectors.groupingBy(e -> e.stufe, TreeMap::new, Collectors.counting()));
+
+        List<Map.Entry<Object, Long>> sortierteEintraege = stufeCount.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toList());
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ausgabeDatei))) {
+            for (Map.Entry<Object, Long> entry : sortierteEintraege) {
+                writer.write(entry.getKey() + "%" + entry.getValue());
+                writer.newLine();
+            }
+        }
+    }
+
 
 
 }

@@ -8,5 +8,6 @@ public class Main {
 
         System.out.println("\nEreignisse der Jonin Stufe:");
         EventProcessor.printJoninEvents(ereignise);
+        EventProcessor.saveStufePunkte(ereignise, "C:\\Users\\Claudiu\\Documents\\GitHub\\RESBogdanClaudiuIoan739Aufgabe1\\gesamtanzahl.txt");
     }
 }
