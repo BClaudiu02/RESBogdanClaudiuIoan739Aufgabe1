@@ -63,13 +63,6 @@ public class Ereignis {
 
     @Override
     public String toString() {
-        return "Ereignis{" +
-                "id=" + id +
-                ", charaktername='" + charaktername + '\'' +
-                ", stufe=" + stufe +
-                ", Beschreibung='" + Beschreibung + '\'' +
-                ", datum=" + datum +
-                ", Kraftpunkte=" + Kraftpunkte +
-                '}';
+        return datum + ": " + charaktername + " - " + Beschreibung;
     }
 }

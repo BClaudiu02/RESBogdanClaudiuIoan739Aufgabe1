@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         List<Ereignis> ereignise = EventProcessor.readXML("C:\\Users\\Claudiu\\Documents\\GitHub\\RESBogdanClaudiuIoan739Aufgabe1\\ninja_events.xml");
-        Scanner scanner = new Scanner(System.in);
 
 
         System.out.println("\nEreignisse der Jonin Stufe:");
