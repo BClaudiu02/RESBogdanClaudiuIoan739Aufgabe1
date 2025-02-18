@@ -5,10 +5,13 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class EventProcessor {
     public static List<Ereignis> readXML(String filepath) throws Exception {
@@ -40,4 +43,14 @@ public class EventProcessor {
         }
         return events;
     }
+
+    public static void printJoninEvents(List<Ereignis> ereignis) {
+        ereignis.stream()
+                .filter(e -> e.stufe.equals("Jonin"))
+                .sorted(Comparator.comparing(e -> e.datum))
+                .forEach(System.out::println);
+    }
+
+
+
 }

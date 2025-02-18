@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public class Ereignis {
     int id;
     String charaktername;
-    private final Stufe stufe;
+    final Stufe stufe;
     String Beschreibung;
     LocalDate datum;
     double Kraftpunkte;
